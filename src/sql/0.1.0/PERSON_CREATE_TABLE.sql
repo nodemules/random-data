@@ -1,0 +1,9 @@
+CREATE TABLE `PERSON` (
+  `PERSON_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `FIRST_NAME` varchar(100) NOT NULL,
+  `LAST_NAME` varchar(100) NOT NULL,
+  `DATE_OF_BIRTH` date DEFAULT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT current_timestamp(),
+  `DATE_MODIFIED` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`PERSON_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;

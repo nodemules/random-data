@@ -1,0 +1,19 @@
+{
+  "name": "random-data",
+  "version": "0.1.0",
+  "description": "An application for the random generation and presentation of data.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodemules/random-data.git"
+  },
+  "author": "Brent Haertlein <brenthaertlein@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodemules/random-data/issues"
+  },
+  "homepage": "https://github.com/nodemules/random-data#readme"
+}

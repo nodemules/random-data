@@ -2,15 +2,18 @@
   const _ = require('lodash');
   const mariasql = require('mariasql');
 
-  const config = require.main.require('./.config');
-
+  let config = {};
   let client;
 
   module.exports = {
 
+    configure: (conf) => {
+      config = conf;
+    },
+
     connect: () => {
 
-      client = new mariasql(config.local.db.mariadb);
+      client = new mariasql(config.db);
 
       client.connect();
 

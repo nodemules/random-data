@@ -12,11 +12,15 @@ const mariadbConnection = require('./src/connections/mariadb');
 
   const app = express();
 
+  const config = require.main.require('./.config');
+
   app.use(json());
 
   app.use('/api', api);
 
-  mariadbConnection.connect();
+  // mariadbConnection.configure(config.local.db.mariadb);
+
+  mariadbConnection.connect(config.local.db.mariadb);
 
   mariadbConnection.ready().then(() => {
     console.log('connected to mariadb');

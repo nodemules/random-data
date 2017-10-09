@@ -1,6 +1,6 @@
 {
 
-  const maria = require.main.require('./src/connections/mariadb');
+  const maria = require('mules-sql-wrapper').Connection;
 
   const personValidator = require.main.require('./src/api/person/validator');
   const personMapper = require.main.require('./src/api/person/mapper');

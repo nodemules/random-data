@@ -6,7 +6,7 @@ const {
 
 const api = require('./src/api/main');
 
-const mariadbConnection = require('./src/connections/mariadb');
+const mariadbConnection = require('mules-sql-wrapper').Connection;
 
 {
 
@@ -18,18 +18,17 @@ const mariadbConnection = require('./src/connections/mariadb');
 
   app.use('/api', api);
 
-  // mariadbConnection.configure(config.local.db.mariadb);
+  mariadbConnection.configure({
+    db: config.local.db.mariadb
+  });
 
-  mariadbConnection.connect(config.local.db.mariadb);
+  mariadbConnection.connect();
 
   mariadbConnection.ready().then(() => {
     console.log('connected to mariadb');
   }, () => {
     console.log('failed to connect to mariadb');
   });
-
-  // mariadbConnection.testConnection();
-  //
 
   app.listen(8080);
 
